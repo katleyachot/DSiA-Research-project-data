@@ -5,7 +5,7 @@ This repository contains scripts for cleaning the raw CAD data and MCSLC data.
 The goal of these steps is to clean the raw call data and to output structured CSV files for analysis
 
 ## Folder Contents
-cleaning_mcslc.R: Loads raw data, fixes formatting issues, and outputs a cleaned version.
+cleaningMCSLC.R: Loads raw data, fixes formatting issues, and outputs a cleaned version.
 
 cleaningCAD.R: Loads raw data, fixes formatting issues, and outputs a cleaned version.
 
