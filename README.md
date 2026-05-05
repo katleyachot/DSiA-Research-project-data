@@ -9,7 +9,7 @@ cleaningMCSLC.R: Loads raw data, fixes formatting issues, and outputs a cleaned 
 
 cleaningCAD.R: Loads raw data, fixes formatting issues, and outputs a cleaned version.
 
-## Input Files
+## Cleaning Input Files
 - EugeneCAD2015noloc.csv
 - EugeneCAD2016noloc.csv
 - EugeneCAD2017noloc.csv
@@ -23,7 +23,7 @@ cleaningCAD.R: Loads raw data, fixes formatting issues, and outputs a cleaned ve
 - EugeneCAD2025noloc.csv
 - MCSLC.csv
 
-## Output Files
+## Cleaning Output Files
 - clean_cad.csv
 - clean_cad2015.csv
 - clean_cad2016.csv
@@ -37,6 +37,19 @@ cleaningCAD.R: Loads raw data, fixes formatting issues, and outputs a cleaned ve
 - clean_cad2024.csv
 - clean_cad2025.csv
 - clean_mcsls.csv
+
+## Plotting Input Files
+- clean_mcslc.csv
+- clean_cahoots.csv
+- clean_epd.csv
+
+## Plotting Output Files
+- mcslc_hour_bar.png
+- mcslc_year_line.png
+- cahoots_hour_bar.png
+- cahoots_year_line.png
+- not_cahoots_hour_bar.png
+- not_cahoots_year_line.png
 
 ## How to Run
 Run the following scripts to clean the data
