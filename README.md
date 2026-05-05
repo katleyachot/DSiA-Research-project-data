@@ -42,6 +42,7 @@ cleaningCAD.R: Loads raw data, fixes formatting issues, and outputs a cleaned ve
 Run the following scripts to clean the data
   - cleaningCAD.R
   - cleaningMCSLC.R
+  - plotting_mcslc_cad.R
 
 # Dependencies
 This project uses the following R packages:
