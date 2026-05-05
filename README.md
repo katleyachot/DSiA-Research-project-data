@@ -1,5 +1,5 @@
 # DSiA-Research-project-data
-This repository contains scripts for cleaning the raw CAD data and MCSLC data.
+This repository contains scripts for cleaning the raw CAD data and MCSLC data. The plotting_mcslc_cad file aggregates by hour and quarter, then plots a bar chart and line plot to visualize call volume for each service. 
 
 ## Purpose
 The goal of these steps is to clean the raw call data and to output structured CSV files for analysis
