@@ -1,0 +1,99 @@
+#load in mcslc data
+clean_mcslc <- read.csv("~/Documents/DSiA/clean_mcslc.csv", header=TRUE)
+View(clean_mcslc)
+
+library(dplyr)
+library(lubridate)
+library(ggplot2)
+
+#add a new column that parses dispatch time to be able to plot it without errors
+#standardizes the format, fixing rows without hour/minute/second
+mcslc <- clean_mcslc %>% mutate(parsed_dispatch_time = parse_date_time(Dispatch.Request.Date...Time, order= c("ymd HMS", "ymd HM", "ymd")),     
+                                hour = hour(parsed_dispatch_time)) #add hour column
+#count hourly call volume
+mcslc_hourly_count <- mcslc %>%
+  group_by(hour) %>%
+  summarise(count=n())
+
+mcslc_hourly_count
+
+#plot hourly count
+ggplot(mcslc, aes(x = hour)) + geom_bar()
+
+#create new df with year and quarter columns 
+mcslc_quarter_calls <- mcslc %>%mutate(year = year(parsed_dispatch_time),quarter = quarter(parsed_dispatch_time))
+#aggregating year/quarter call volume
+mcslc_quarter_calls <- mcslc_quarter_calls %>%
+  group_by(year, quarter) %>% 
+  summarise(call_volume = n(), .groups = "drop")
+#create new column with year and quarter indicated w Q#
+mcslc_quarter_calls <- mcslc_quarter_calls %>% 
+  mutate(year_quarter = paste0(year, " Q", quarter))
+
+#plot yearly count
+ggplot(mcslc_quarter_calls, aes(x = year_quarter, y = call_volume, group = 1)) +geom_line() + 
+  geom_point() 
+
+#load in cahoots dataset
+clean_cahoots <- read.csv("~/Documents/DSiA/clean_cahoots.csv")
+View(clean_cahoots)
+
+#add a new column that parses dispatch time to be able to plot it without errors
+#standardizes the format, fixing rows without hour/minute/second
+cahoots <- clean_cahoots %>% mutate(parsed_dispatch_time = parse_date_time(calltime, order= c("ymd HMS", "ymd HM", "ymd")),     
+                                    hour = hour(parsed_dispatch_time)) #add hour column
+#count hourly call volume
+cahoots_hourly_count <- cahoots %>%
+  group_by(hour) %>%
+  summarise(count=n())
+
+cahoots_hourly_count
+
+#plot hourly count
+ggplot(cahoots, aes(x = hour)) + geom_bar()
+
+#create new df with year and quarter columns 
+cahoots_quarter_calls <- cahoots %>%mutate(year = year(parsed_dispatch_time),quarter = quarter(parsed_dispatch_time))
+#aggregating year/quarter call volume
+cahoots_quarter_calls <- cahoots_quarter_calls %>%
+  group_by(year, quarter) %>% 
+  summarise(call_volume = n(), .groups = "drop")
+#create new column with year and quarter indicated w Q#
+cahoots_quarter_calls <- cahoots_quarter_calls %>% 
+  mutate(year_quarter = paste0(year, " Q", quarter))
+
+#plot yearly count
+ggplot(cahoots_quarter_calls, aes(x = year_quarter, y = call_volume, group = 1)) +geom_line() + 
+  geom_point() 
+
+#load in not cahoots dataset
+clean_not_cahoots <- read.csv("~/Documents/DSiA/clean_epd.csv")
+View(clean_not_cahoots)
+
+#add a new column that parses dispatch time to be able to plot it without errors
+#standardizes the format, fixing rows without hour/minute/second
+not_cahoots <- clean_not_cahoots %>% mutate(parsed_dispatch_time = parse_date_time(calltime, order= c("ymd HMS", "ymd HM", "ymd")),     
+                                            hour = hour(parsed_dispatch_time)) #add hour column
+#count hourly call volume
+not_cahoots_hourly_count <- not_cahoots %>%
+  group_by(hour) %>%
+  summarise(count=n())
+
+not_cahoots_hourly_count
+
+#plot hourly count
+ggplot(not_cahoots, aes(x = hour)) + geom_bar()
+
+#create new df with year and quarter columns 
+not_cahoots_quarter_calls <- not_cahoots %>%mutate(year = year(parsed_dispatch_time),quarter = quarter(parsed_dispatch_time))
+#aggregating year/quarter call volume
+not_cahoots_quarter_calls <- not_cahoots_quarter_calls %>%
+  group_by(year, quarter) %>% 
+  summarise(call_volume = n(), .groups = "drop")
+#create new column with year and quarter indicated w Q#
+not_cahoots_quarter_calls <- not_cahoots_quarter_calls %>% 
+  mutate(year_quarter = paste0(year, " Q", quarter))
+
+#plot yearly count
+ggplot(not_cahoots_quarter_calls, aes(x = year_quarter, y = call_volume, group = 1)) +geom_line() + 
+  geom_point() 
