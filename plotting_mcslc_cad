@@ -19,6 +19,7 @@ mcslc_hourly_count
 
 #plot hourly count
 ggplot(mcslc, aes(x = hour)) + geom_bar()
+ggsave("mcslc_hour_bar.png")
 
 #create new df with year and quarter columns 
 mcslc_quarter_calls <- mcslc %>%mutate(year = year(parsed_dispatch_time),quarter = quarter(parsed_dispatch_time))
@@ -33,6 +34,7 @@ mcslc_quarter_calls <- mcslc_quarter_calls %>%
 #plot yearly count
 ggplot(mcslc_quarter_calls, aes(x = year_quarter, y = call_volume, group = 1)) +geom_line() + 
   geom_point() 
+ggsave("mcslc_year_line.png")
 
 #load in cahoots dataset
 clean_cahoots <- read.csv("~/Documents/DSiA/clean_cahoots.csv")
@@ -51,6 +53,7 @@ cahoots_hourly_count
 
 #plot hourly count
 ggplot(cahoots, aes(x = hour)) + geom_bar()
+ggsave("cahoots_hour_bar.png")
 
 #create new df with year and quarter columns 
 cahoots_quarter_calls <- cahoots %>%mutate(year = year(parsed_dispatch_time),quarter = quarter(parsed_dispatch_time))
@@ -65,6 +68,7 @@ cahoots_quarter_calls <- cahoots_quarter_calls %>%
 #plot yearly count
 ggplot(cahoots_quarter_calls, aes(x = year_quarter, y = call_volume, group = 1)) +geom_line() + 
   geom_point() 
+ggsave("cahoots_year_line.png")
 
 #load in not cahoots dataset
 clean_not_cahoots <- read.csv("~/Documents/DSiA/clean_epd.csv")
@@ -83,6 +87,7 @@ not_cahoots_hourly_count
 
 #plot hourly count
 ggplot(not_cahoots, aes(x = hour)) + geom_bar()
+ggsave("not_cahoots_hour_bar.png")
 
 #create new df with year and quarter columns 
 not_cahoots_quarter_calls <- not_cahoots %>%mutate(year = year(parsed_dispatch_time),quarter = quarter(parsed_dispatch_time))
@@ -97,3 +102,4 @@ not_cahoots_quarter_calls <- not_cahoots_quarter_calls %>%
 #plot yearly count
 ggplot(not_cahoots_quarter_calls, aes(x = year_quarter, y = call_volume, group = 1)) +geom_line() + 
   geom_point() 
+ggsave("not_cahoots_year_line.png")
