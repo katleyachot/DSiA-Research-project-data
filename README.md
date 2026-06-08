@@ -58,13 +58,34 @@ yearly_DiD.R: Performs parallel trend test and difference of differences test of
 - clean_cad2024.csv
 - clean_cad2025.csv
 - clean_mcsls.csv
+- clean_s_cad.csv
+- clean_spd2015.csv
+- clean_spd2016.csv
+- clean_spd2017.csv
+- clean_spd2018.csv
+- clean_spd2019.csv
+- clean_spd2020.csv
+- clean_spd2021.csv
+- clean_spd2022.csv
+- clean_spd2023.csv
+- clean_spd2024.csv
+- clean_spd2025.csv
 
-## Plotting Input Files
+## Splitting CAD Input Files
+- clean_cad.csv
+- clean_s_cad.csv
+## Splitting CAD Output Files
+- clean_eug_cahoots.csv
+- clean_epd.csv
+- clean_spr_cahoots.csv
+- clean_spd.csv
+
+## Exploratory Plotting Input Files
 - clean_mcslc.csv
 - clean_cahoots.csv
 - clean_epd.csv
 
-## Plotting Output Files
+## Exploratory Plotting Output Files
 - mcslc_hour_bar.png
 - mcslc_year_line.png
 - cahoots_hour_bar.png
@@ -72,11 +93,45 @@ yearly_DiD.R: Performs parallel trend test and difference of differences test of
 - not_cahoots_hour_bar.png
 - not_cahoots_year_line.png
 
+## Hourly Analysis Input Files
+- clean_eug_mclsc.csv
+- clean_spr_mcslc.csv
+- clean_eug_cahoots.csv
+- clean_spr_cahoots.csv
+- clean_epd.csv
+- clean_s_cad.csv
+
+## Hourly Analysis Output Files
+- hourly_eug_mcslc.png
+- hourly_spr_mcslc.png
+- hourly_epd.png
+- hourly_spd.png
+- pre25_mclsc.png
+- pre25_police.png
+- pre25_cahoots.png
+- spr_and_eug_cahoots_hour.png
+
+## Long-term Analysis Input Files 
+-  clean_eug_mclsc.csv
+- clean_spr_mcslc.csv
+- clean_eug_cahoots.csv
+- clean_spr_cahoots.csv
+- clean_epd.csv
+- clean_s_cad.csv
+  
+## Long-term Analysis Output Files
+- police_year.png
+- cahoots_year.png
+- mcslc_year.png
+
 ## How to Run
-Run the following scripts to clean the data
+Run the following scripts to clean, plot, and analyze the data
   - cleaningCAD.R
   - cleaningMCSLC.R
-  - plotting_mcslc_cad.R
+  - splitting_cad.R
+  - exploratory_plotting.R
+  - hourly_DiD.R
+  - year_DiD.R
 
 # Dependencies
 This project uses the following R packages:
