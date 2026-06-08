@@ -1,13 +1,23 @@
-# DSiA-Research-project-data
-This repository contains scripts for cleaning the raw CAD data and MCSLC data. The plotting_mcslc_cad file aggregates by hour and quarter, then plots a bar chart and line plot to visualize call volume for each service. 
+# DSiA-Research-project
+This repository contains scripts for running a temporal call pattern analysis. The analysis investigates the changes in hourly and long-term patterns of emergency dispatch services after CAHOOTS ended services in Eugene.
+The repository contains scripts for cleaning the raw CAD data and MCSLC data, scripts for exploring patterns through visualizations, and scripts to run difference in differences analyses. 
 
 ## Purpose
 The goal of these steps is to clean the raw call data and to output structured CSV files for analysis
 
 ## Folder Contents
 cleaningMCSLC.R: Loads raw data, fixes formatting issues, and outputs a cleaned version.
-
 cleaningCAD.R: Loads raw data, fixes formatting issues, and outputs a cleaned version.
+
+exploratory_plotting.R: Creates hourly counts and plots hourly distribution and quarterly trends of EPD, CAHOOTS, and MCSLC.
+
+splitting_cad.R: Splits EPD and SPD CAD data into CAHOOTS and not CAHOOTS, outputs CSVs of the four respective datasets.
+
+creating_pop_table.R: Creates a dataframe containing Eugene and Springfield population from 2015 to 2025.
+
+hourly_DiD.R: Performs parallel trend test and difference of differences test of MCSLC and police data, outputs model summary and visualizations of hourly pattern changes.
+
+yearly_DiD.R: Performs parallel trend test and difference of differences test of MCSLC and police data, outputs model summary and visualizations of long-term pattern changes.
 
 ## Cleaning Input Files
 - EugeneCAD2015noloc.csv
@@ -22,6 +32,17 @@ cleaningCAD.R: Loads raw data, fixes formatting issues, and outputs a cleaned ve
 - EugeneCAD2024noloc.csv
 - EugeneCAD2025noloc.csv
 - MCSLC.csv
+- 2015spd.csv
+- 2016spd.csv
+- 2017spd.csv
+- 2018spd.csv
+- 2019spd.csv
+- 2020spd.csv
+- 2021spd.csv
+- 2022spd.csv
+- 2023spd.csv
+- 2024spd.csv
+- 2025spd.csv
 
 ## Cleaning Output Files
 - clean_cad.csv
