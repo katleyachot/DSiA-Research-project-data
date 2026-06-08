@@ -80,6 +80,9 @@ yearly_DiD.R: Performs parallel trend test and difference of differences test of
 - clean_spr_cahoots.csv
 - clean_spd.csv
 
+## Creating Population Table Output
+- population.csv
+
 ## Exploratory Plotting Input Files
 - clean_mcslc.csv
 - clean_cahoots.csv
@@ -118,6 +121,7 @@ yearly_DiD.R: Performs parallel trend test and difference of differences test of
 - clean_spr_cahoots.csv
 - clean_epd.csv
 - clean_s_cad.csv
+- population.csv
   
 ## Long-term Analysis Output Files
 - police_year.png
@@ -129,6 +133,7 @@ Run the following scripts to clean, plot, and analyze the data
   - cleaningCAD.R
   - cleaningMCSLC.R
   - splitting_cad.R
+  - creating_pop_table.R
   - exploratory_plotting.R
   - hourly_DiD.R
   - year_DiD.R
